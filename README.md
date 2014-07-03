@@ -1,4 +1,5 @@
 ## Fictional MVP!
+![TravisCI](https://travis-ci.org/betacar/cbc_music.svg?branch=master)
 
 This fictional client has asked for a recommendation system for his social music player system.
 He wants you to essentially take note of what music the user has listened to, which people they follow and from there recommend some songs. There is no like or dislike so far.
