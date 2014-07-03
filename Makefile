@@ -5,6 +5,6 @@ test:
 		--reporter spec \
 		--harmony \
 		--bail \
-		app/*/test.js
+		test/**/*.js
 
 .PHONY: test
