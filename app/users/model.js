@@ -15,7 +15,11 @@ function User (id) {
 
 User.all = function () {
   return DB.users;
-}
+};
+
+User.exists = function(id) {
+  return (id in DB.users);
+};
 
 /**
  * Instance methods.

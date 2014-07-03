@@ -32,10 +32,21 @@ describe('The user model', function(){
     }).should.throw(Error('An id string must be provided'));
   });
 
+  it('should return true if a user exists', function() {
+    var user = new User('c');
+    user.save();
+    User.exists('c').should.be.true;
+  });
+
+  it('should return false if a user does not exists', function() {
+    User.exists('x').should.be.false;
+  });
+
   it('lists all users', function() {
     expected = {
       a: {},
-      b: {}
+      b: {},
+      c: {}
     }
     User.all().should.eql(expected);
   });
