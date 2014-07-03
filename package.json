@@ -24,5 +24,8 @@
     "should": "*",
     "supertest": "~0.8.2"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "make test"
+  }
 }
