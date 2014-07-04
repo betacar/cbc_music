@@ -2,13 +2,13 @@ var request = require('supertest');
 var api = require('../..');
 var helper = require('../helper');
 
-describe('POST /follows', function() {
+describe('POST /follow', function() {
   describe('with no parameters', function() {
     it('returns 400', function(done) {
       var app = api();
 
       request(app.listen())
-      .post('/follows')
+      .post('/follow')
       .send({})
       .expect(400)
       .end(function(err, res){
@@ -27,7 +27,7 @@ describe('POST /follows', function() {
       var app = api();
 
       request(app.listen())
-      .post('/follows')
+      .post('/follow')
       .send({from: 'a', to: 'b'})
       .expect(400)
       .end(function(err, res){
@@ -61,7 +61,7 @@ describe('POST /follows', function() {
       var app = api();
 
       request(app.listen())
-      .post('/follows')
+      .post('/follow')
       .send({from: 'a', to: 'b'})
       .expect(201)
       .end(function(err, res){
@@ -75,7 +75,7 @@ describe('POST /follows', function() {
         var app = api();
 
         request(app.listen())
-        .post('/follows')
+        .post('/follow')
         .send({from: '', to: 'b'})
         .expect(400)
         .end(function(err, res){
@@ -90,7 +90,7 @@ describe('POST /follows', function() {
         var app = api();
 
         request(app.listen())
-        .post('/follows')
+        .post('/follow')
         .send({from: 'a', to: ''})
         .expect(400)
         .end(function(err, res){
@@ -105,7 +105,7 @@ describe('POST /follows', function() {
         var app = api();
 
         request(app.listen())
-        .post('/follows')
+        .post('/follow')
         .send({from: 'x', to: 'b'})
         .expect(400)
         .end(function(err, res){
@@ -120,7 +120,7 @@ describe('POST /follows', function() {
         var app = api();
 
         request(app.listen())
-        .post('/follows')
+        .post('/follow')
         .send({from: 'a', to: 'z'})
         .expect(400)
         .end(function(err, res){

@@ -2,6 +2,6 @@
   "name": "follows",
   "description": "follows resource",
   "routes": {
-    "POST /follows": "follows"
+    "POST /follow": "follow"
   }
 }
