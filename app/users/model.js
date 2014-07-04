@@ -26,6 +26,7 @@ User.exists = function(id) {
  */
 
 User.prototype.save = function() {
+  if (User.exists(this.id)) throw new Error('user id ' + this.id + ' already exists in the database');
   DB.users[this.id] = {};
   return DB.users[this.id];
 };
