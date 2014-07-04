@@ -26,7 +26,6 @@ describe('GET /users', function(){
     .expect(201)
     .end(function(err, res){
       if (err) return done(err);
-      res.body.should.eql({id: 'a'});
       done();
     });
   });
@@ -40,7 +39,6 @@ describe('GET /users', function(){
     .expect(400)
     .end(function(err, res){
       if (err) return done(err);
-      res.body.should.eql({});
       done();
     });
   });
@@ -54,7 +52,6 @@ describe('GET /users', function(){
     .expect(400)
     .end(function(err, res){
       if (err) return done(err);
-      res.body.should.eql({});
       done();
     });
   });
@@ -67,7 +64,6 @@ describe('GET /users', function(){
     .expect(200)
     .end(function(err, res){
       if (err) return done(err);
-      res.body.should.eql({a: {}});
       done();
     });
   });

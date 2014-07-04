@@ -22,8 +22,14 @@ exports.create = function *(id){
   var body = yield parse(this);
   if (!body.id) this.throw(400, '.id required');
   if (User.exists(body.id)) this.throw(400, id + ' exists');
-  user = new User(body.id);
-  user.save();
+
+  try {
+    user = new User(body.id);
+    user.save();
+  }
+  catch (e) {
+    this.throw(400, e);
+  }
+
   this.status = 201;
-  this.body = user;
 };
