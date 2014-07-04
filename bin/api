@@ -16,6 +16,7 @@ program
   .parse(process.argv);
 
 // create app
+var app = api();
 
 // listen
 

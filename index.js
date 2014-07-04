@@ -15,7 +15,7 @@ var koa = require('koa');
  */
 global.DB = {
   users: {},
-  follows: {},
+  follows: [],
   music: {},
   listens: {}
 }
@@ -40,8 +40,7 @@ module.exports = api;
  * @api public
  */
 
-function api(opts) {
-  opts = opts || {};
+function api() {
   var app = koa();
 
   // logging
