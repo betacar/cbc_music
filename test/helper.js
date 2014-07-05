@@ -17,10 +17,15 @@ exports = module.exports = {
     global.DB.music = {};
   },
 
+  clearListens: function() {
+    global.DB.listen = {};
+  },
+
   clearAll: function() {
     exports.clearUsers();
     exports.clearFollows();
     exports.clearRecommendations();
     exports.clearMusic();
+    exports.clearListens();
   }
 };

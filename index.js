@@ -17,6 +17,7 @@ global.DB = {
   users: {},
   follows: [],
   music: {},
+  listen: {},
   recommendations: {}
 }
 
