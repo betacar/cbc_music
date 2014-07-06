@@ -1,7 +1,7 @@
 /**
  * Dependencies.
  */
-
+helper = require('../../lib/helpers');
 User = require('../users/model');
 
 /**
@@ -21,14 +21,7 @@ function Follow(from, to) {
  */
 
 Follow.exists = function(from, to) {
-  follows = DB.follows
-  length = follows.length - 1;
-
-  for (var i = 0; i <= length; i++) {
-    if ((follows[i].from === from) && (follows[i].to === to)) return true;
-  };
-
-  return false;
+  return helper.findWhere(DB.follows, {from: from, to: to});
 };
 
 /**
