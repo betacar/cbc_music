@@ -18,6 +18,11 @@ describe('The user model', function(){
     });
   });
 
+  it('saves a new user without error', function(){
+    var user = new User('a');
+    user.save();
+  });
+
   it('returns an exception if the id exists', function(){
     (function() {
       var user = new User('a');
@@ -25,15 +30,10 @@ describe('The user model', function(){
     }).should.throw(Error('user id a already exists in the database'));
   });
 
-  it('saves a new user without error', function(){
-    var user = new User('d');
-    user.save();
-  });
-
   it('returns the saved user id', function() {
-    var user = new User('e');
+    var user = new User('b');
     user.save();
-    user.id.should.eql('e');
+    user.id.should.eql('b');
   });
 
   it('returns an exception when no ID is passed', function() {
@@ -56,9 +56,7 @@ describe('The user model', function(){
     expected = {
       a: {},
       b: {},
-      c: {},
-      d: {},
-      e: {}
+      c: {}
     }
     User.all().should.eql(expected);
   });
