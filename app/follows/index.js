@@ -4,7 +4,6 @@
  */
 
 var Follow = require('./model');
-var User   = require('../users/model');
 var parse  = require('co-body');
 
 /**
