@@ -16,4 +16,15 @@ test-model:
 run:
 	@bin/api
 
-.PHONY: test test-resource test-models run
+load-users:
+	@node --harmony scripts/users.js
+
+load-follows:
+	@node --harmony scripts/follows.js
+
+load-listen:
+	@node --harmony scripts/listen.js
+
+load: load-users load-follows load-listen
+
+.PHONY: test test-resource test-models run load-users load-follows load-listen load
