@@ -21,5 +21,5 @@ exports.index = function *(){
   }
 
   this.status = 200;
-  this.body = query;
+  this.body = { list: query };
 };
