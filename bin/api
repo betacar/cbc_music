@@ -6,6 +6,7 @@
 
 var program = require('commander');
 var api = require('..');
+var loadMusic = require('../scripts/music');
 
 // options
 
@@ -22,3 +23,5 @@ var app = api();
 
 app.listen(program.port, program.host, ~~program.backlog);
 console.log('Listening on %s:%s', program.host, program.port);
+console.log('Loading music tracks');
+loadMusic(program.host, program.port);
