@@ -1,0 +1,7 @@
+{
+  "name": "recommendations",
+  "description": "returns a list of music recommendations for a given user",
+  "routes": {
+    "GET /recommendations/:user": "index"
+  }
+}
