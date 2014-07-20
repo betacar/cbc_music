@@ -15,11 +15,11 @@ exports.index = function *(){
 
   try {
     query = recommendations(userId);
+
+    this.status = 200;
+    this.body = { list: query };
   }
   catch (e) {
     this.throw(400, e);
-  }
-
-  this.status = 200;
-  this.body = { list: query };
+  };
 };
