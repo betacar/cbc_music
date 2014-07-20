@@ -30,14 +30,20 @@ Listen.findUser = function(user) {
   return helper.where(DB.listen, {user: user});
 };
 
+Listen.userMusic = function(user) {
+  return Listen.findUser(user).map(function(listen) {
+    return listen.music;
+  });
+};
+
 /**
  * Instance methods.
  * We should add a playCount attr to count the times an user has played a music track.
  */
 
 Listen.prototype.save = function() {
-  if (!User.exists(this.user)) throw new Error('user id ' + this.from + ' does not exists');
-  if (!Music.exists(this.music)) throw new Error('music track id ' + this.to + ' does not exists');
+  if (!User.exists(this.user)) throw new Error('user id ' + this.user + ' does not exists');
+  if (!Music.exists(this.music)) throw new Error('music track id ' + this.music + ' does not exists');
   if (!Listen.exists(this.user, this.music)) return DB.listen.push({user: this.user, music: this.music});
   return true;
 };
