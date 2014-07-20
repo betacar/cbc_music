@@ -24,6 +24,10 @@ Follow.exists = function(from, to) {
   return helper.findWhere(DB.follows, {from: from, to: to});
 };
 
+Follow.findUser = function(user) {
+  return helper.where(DB.follows, {from: user});
+};
+
 /**
  * Instance methods.
  */
