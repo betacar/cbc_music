@@ -63,9 +63,9 @@ describe('The music model', function() {
 
   it('lists all music tracks', function() {
     expected = {
-      m1: 'jazz,ska',
-      m2: 'floklore,joropo',
-      m3: 'electronic,house'
+      m1: ['jazz', 'ska'],
+      m2: ['floklore', 'joropo'],
+      m3: ['electronic', 'house']
     };
     Music.all().should.eql(expected);
   });
