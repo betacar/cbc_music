@@ -18,10 +18,10 @@ exports.create = function *(id, generes){
   try {
     music = new Music(body.id, body.generes);
     music.save();
+
+    this.status = 201;
   }
   catch (e) {
     this.throw(400, e);
-  }
-
-  this.status = 201;
+  };
 };

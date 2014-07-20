@@ -1,4 +1,4 @@
-global.DB = global.DB || { users: {}, follows: [], music: {}, listen: [], recommendations: {} };
+global.DB = global.DB || { users: {}, follows: [], music: {}, listen: [] };
 
 exports = module.exports = {
   clearUsers: function() {
@@ -7,10 +7,6 @@ exports = module.exports = {
 
   clearFollows: function() {
     global.DB.follows = [];
-  },
-
-  clearRecommendations: function() {
-    global.DB.recommendations = {};
   },
 
   clearMusic: function() {
@@ -24,7 +20,6 @@ exports = module.exports = {
   clearAll: function() {
     exports.clearUsers();
     exports.clearFollows();
-    exports.clearRecommendations();
     exports.clearMusic();
     exports.clearListens();
   }

@@ -3,7 +3,7 @@
  * Module dependencies.
  */
 
-var User = require('./model');
+var User  = require('./model');
 var parse = require('co-body');
 
 /**
@@ -26,10 +26,10 @@ exports.create = function *(id){
   try {
     user = new User(body.id);
     user.save();
+
+    this.status = 201;
   }
   catch (e) {
     this.throw(400, e);
-  }
-
-  this.status = 201;
+  };
 };

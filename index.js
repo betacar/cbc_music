@@ -13,13 +13,12 @@ var koa = require('koa');
 /**
  * In memory database mock.
  */
-global.DB = {
+DB = {
   users: {},
   follows: [],
   music: {},
-  listen: [],
-  recommendations: {}
-}
+  listen: []
+};
 
 /**
  * Environment.

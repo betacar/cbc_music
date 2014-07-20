@@ -1,9 +1,9 @@
 /**
  * Dependencies.
  */
-helper = require('../../lib/helpers');
-User   = require('../users/model');
-Music  = require('../music/model');
+var helper = require('../../lib/helpers');
+var User   = require('../users/model');
+var Music  = require('../music/model');
 
 /**
  * Listen model.

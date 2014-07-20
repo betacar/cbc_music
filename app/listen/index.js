@@ -17,11 +17,11 @@ exports.create = function *(user, music){
 
   try {
     listen = new Listen(body.user, body.music);
-    listen.save()
+    listen.save();
+
+    this.status = 201;
   }
   catch (e) {
     this.throw(400, e);
-  }
-
-  this.status = 201;
+  };
 };

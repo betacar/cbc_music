@@ -17,20 +17,20 @@ describe('The listen model', function(){
     });
 
     it('wont return an error', function() {
-      listen = new Listen('a', 'm1');
+      var listen = new Listen('a', 'm1');
       listen.save().should.eql(1);
     });
 
     it('returns an exception when the user does not exists', function() {
       (function() {
-        listen = new Listen('x', 'm1');
+        var listen = new Listen('x', 'm1');
         listen.save();
       }).should.throw(Error('user id x does not exists'));
     });
 
     it('returns an exception when the music track does not exists', function() {
       (function() {
-        listen = new Listen('a', 'm10');
+        var listen = new Listen('a', 'm10');
         listen.save();
       }).should.throw(Error('music track id z does not exists'));
     });

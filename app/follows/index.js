@@ -16,11 +16,11 @@ exports.follow = function *(from, to){
 
   try {
     follow = new Follow(body.from, body.to);
-    follow.save()
+    follow.save();
+
+    this.status = 201;
   }
   catch (e) {
     this.throw(400, e);
-  }
-
-  this.status = 201;
+  };
 };

@@ -16,27 +16,27 @@ describe('The follow model', function(){
     });
 
     it('wont return an error', function() {
-      follow = new Follow('a', 'b');
+      var follow = new Follow('a', 'b');
       follow.save().should.eql(1);
     });
 
     it('returns an exception when the following user does not exists', function() {
       (function() {
-        follow = new Follow('x', 'b');
+        var follow = new Follow('x', 'b');
         follow.save();
       }).should.throw(Error('user id x does not exists'));
     });
 
     it('returns an exception when the followed user does not exists', function() {
       (function() {
-        follow = new Follow('a', 'z');
+        var follow = new Follow('a', 'z');
         follow.save();
       }).should.throw(Error('user id z does not exists'));
     });
 
     it('returns an exception when the follow relation already exists', function() {
       (function() {
-        follow = new Follow('a', 'b');
+        var follow = new Follow('a', 'b');
         follow.save();
       }).should.throw(Error('a already follows b'));
     });

@@ -1,8 +1,8 @@
 /**
  * Dependencies.
  */
-helper = require('../../lib/helpers');
-User = require('../users/model');
+var helper = require('../../lib/helpers');
+var User   = require('../users/model');
 
 /**
  * Follow model.
