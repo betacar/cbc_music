@@ -30,8 +30,8 @@ Music.exists = function(id) {
 
 Music.prototype.save = function() {
   if (Music.exists(this.id)) throw new Error('music id ' + this.id + ' already exists in the database');
-  DB.music[this.id] = this.generes;
-  return DB.music[this.id];
+  DB.music[this.id] = this.generes.split(',');
+  return { id: this.id, generes: DB.music[this.id] };
 };
 
 module.exports = Music;
