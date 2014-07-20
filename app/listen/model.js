@@ -26,6 +26,10 @@ Listen.exists = function(user, music) {
   return helper.findWhere(DB.listen, {user: user, music: music});
 };
 
+Listen.findUser = function(user) {
+  return helper.where(DB.listen, {user: user});
+};
+
 /**
  * Instance methods.
  * We should add a playCount attr to count the times an user has played a music track.
