@@ -13,4 +13,7 @@ test-resource:
 test-model:
 	$(call load_env) test/models/*.js
 
-.PHONY: test test-resource test-models
+run:
+	@bin/api
+
+.PHONY: test test-resource test-models run
