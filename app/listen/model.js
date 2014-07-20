@@ -34,7 +34,7 @@ Listen.exists = function(user, music) {
 Listen.prototype.save = function() {
   if (!User.exists(this.user)) throw new Error('user id ' + this.from + ' does not exists');
   if (!Music.exists(this.music)) throw new Error('music track id ' + this.to + ' does not exists');
-  if (!Listen.exists(this.user, this.music)) return DB.listen.push({ user: this.from, music: this.music});
+  if (!Listen.exists(this.user, this.music)) return DB.listen.push({user: this.user, music: this.music});
   return true;
 };
 
