@@ -21,7 +21,7 @@ exports.index = function *(){
 exports.create = function *(id){
   var body = yield parse(this);
   if (!body.id) this.throw(400, '.id required');
-  if (User.exists(body.id)) this.throw(400, id + ' exists');
+  if (User.exists(body.id)) this.throw(400, body.id + ' exists');
 
   try {
     user = new User(body.id);
