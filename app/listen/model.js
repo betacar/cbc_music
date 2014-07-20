@@ -31,9 +31,7 @@ Listen.findUser = function(user) {
 };
 
 Listen.userMusic = function(user) {
-  return Listen.findUser(user).map(function(listen) {
-    return listen.music;
-  });
+  return helper.pluck(Listen.findUser(user), 'music');
 };
 
 /**

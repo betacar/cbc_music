@@ -33,9 +33,7 @@ Follow.findUserTo = function(user) {
 };
 
 Follow.userFollows = function(user) {
-  return Follow.findUserFrom(user).map(function(follow) {
-    return follow.to;
-  });
+  return helper.pluck(Follow.findUserFrom(user), 'to');
 };
 
 /**
