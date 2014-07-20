@@ -24,8 +24,18 @@ Follow.exists = function(from, to) {
   return helper.findWhere(DB.follows, {from: from, to: to});
 };
 
-Follow.findUser = function(user) {
+Follow.findUserFrom = function(user) {
   return helper.where(DB.follows, {from: user});
+};
+
+Follow.findUserTo = function(user) {
+  return helper.where(DB.follows, {to: user});
+};
+
+Follow.userFollows = function(user) {
+  return Follow.findUserFrom(user).map(function(follow) {
+    return follow.to;
+  });
 };
 
 /**
