@@ -81,9 +81,15 @@ describe('GET /recommendations', function() {
       .expect(200)
       .end(function(err, res){
         if (err) return done(err);
+
         res.body.should.be.ok;
+        res.body.should.be.an.Object;
         res.body.list.should.be.an.Array;
         res.body.list.should.have.length(5);
+        res.body.list.map(function(music) {
+          music.should.be.a.String;
+        });
+
         done();
       });
     });
