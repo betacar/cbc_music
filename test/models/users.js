@@ -1,5 +1,3 @@
-var request = require('supertest');
-var assert = require('assert');
 var User = require('../../app/users/model');
 var helper = require('../helper');
 
