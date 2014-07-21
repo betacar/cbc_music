@@ -13,16 +13,18 @@ Assume you have more than one implementation of recommendations, how could you t
 ---
 
 How long did this assignment take?
->
+> About two weeks or so, because I dedicated most of my free time at night and weekends.
 
 Where would be the bottlenecks of this solution you have implemented?
->
+> I would say is the lack of database engine. It took some time to create the models and their logic to save and validate all data.
 
 What was the hardest part?
->
+> Obviously the recommendation engine. I read various articules about how to implement existing recommendation algorithms (like cosine similarity, the Pearson correlation, collaborative filtering, item-to-item, among others).
+> But it was a bit hard to adapt them with the existing limitations in data. So, I decided to follow the (KISS)[http://en.wikipedia.org/wiki/KISS_principle] principle.
 
 Did you learn something new?
->
+> Absolutely. I didn't have no knowledge on how recommendation algorithms work and what was involve in it. It was really exciting to learn about them.
+> Also, using cutting edge technology, like ES6 in Node Haromy, made the ride really fun.
 
 Do you feel your skills were under tested?
->
+> No. And actually, if you guys don't mind, I'll keep the repo to work on it from time to time. I want to keep learning more about recommendation algorithms and how to implement them in a limited computation system.
